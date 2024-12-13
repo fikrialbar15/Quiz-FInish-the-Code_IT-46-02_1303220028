@@ -32,7 +32,7 @@ public class DeleteUserServlet extends HttpServlet {
                 stmt.setInt(1, userId);
                 stmt.executeUpdate();
             }
-            response.sendRedirect("userList.jsp");
+            response.sendRedirect("UserList.jsp");
         } catch (SQLException e) {
             e.printStackTrace();
             response.sendRedirect("error.jsp");

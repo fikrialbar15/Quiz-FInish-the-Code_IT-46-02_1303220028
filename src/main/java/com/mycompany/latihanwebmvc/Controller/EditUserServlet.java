@@ -62,9 +62,13 @@ public class EditUserServlet extends HttpServlet {
             String query = "UPDATE users SET username = ?, password = ?, full_name = ? WHERE id = ?";
             try (PreparedStatement stmt = conn.prepareStatement(query)) {
                 stmt.setString(1, user.getUsername());
+                stmt.setString(2, user.getPassword());
+                stmt.setString(3, user.getFullName());
+                stmt.setInt(4, user.getId());
                 stmt.executeUpdate();
+                
             }
-            response.sendRedirect("userList.jsp");
+            response.sendRedirect("UserList.jsp");
         } catch (SQLException e) {
             e.printStackTrace();
             response.sendRedirect("error.jsp");

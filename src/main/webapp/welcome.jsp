@@ -16,6 +16,7 @@
     
     <!-- Tombol untuk logout -->
     <form action="logout" method="get">
+        <button type="submit"><a href="UserList"> User List</a></button>
         <button type="submit">Logout</button>
     </form>
 </body>
